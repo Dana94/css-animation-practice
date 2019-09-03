@@ -1,7 +1,13 @@
 <template>
   <div class="hello">
     <div class="square red">
-      <div class="square blue"></div>
+      <div class="door">
+        <div class="blue1"></div>
+        <div class="blue2"></div>
+        <div class="blue3">
+          <div class="inner"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,14 +28,44 @@ export default {
   width: 200px;
 }
 
-.blue {
-  background-color: blue;
+.door {
   animation: open 2s linear forwards;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". . ."
+    "col1 col2 col3";
+  border-top: 32px solid transparent;
+}
+
+.blue1 {
+  height: 318px;
+  border-top: 50px solid transparent;
+  width: 100%;
+  grid-area: col1;
+  background-color: purple;
+}
+
+.blue2 {
+  grid-area: col2;
+  border-left: 67px solid purple;
+  border-top: 58px solid transparent;
+}
+
+.blue3 {
+  grid-area: col3;
+  border-top: 58px solid transparent;
+  .inner {
+    background-color: purple;
+    height: 100%;
+  }
 }
 
 .red {
   background-color: red;
-  margin: 0 auto;
+
 }
 
 @keyframes open {
@@ -39,7 +75,7 @@ export default {
 
   100% {
     transform: translateX(200px);
-    background-color: pink;
+    //background-color: pink;
   }
 }
 </style>

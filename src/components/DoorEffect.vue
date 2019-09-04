@@ -9,9 +9,11 @@
         <div class="side3">
 
         </div>
-      </div> -->
+      </div>-->
       <div class="door">
-        <div class="latch"></div>
+        <div class="latch">
+          <div class="button"></div>
+        </div>
         <div class="blue1"></div>
         <div class="blue2"></div>
         <div class="blue3">
@@ -39,7 +41,7 @@ export default {
 }
 
 .door {
-  //animation: open 2s linear forwards;
+  animation: open 2s linear forwards;
   position: relative;
   display: grid;
   grid-template-rows: auto auto;
@@ -73,7 +75,6 @@ export default {
   grid-area: p1;
   border-top: 58px solid transparent;
 
-
   .inner {
     background-color: #e21708;
     height: 100%;
@@ -102,13 +103,11 @@ export default {
 }
 
 .side3 {
-
   height: 318px;
   border-top: 50px solid transparent;
   width: 100%;
   grid-area: p3;
   background-color: #e21708;
-
 }
 
 .red {
@@ -117,9 +116,17 @@ export default {
 
 .latch {
   position: absolute;
-  width: 20px;
-  height: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 40%;
   background-color: yellow;
+
+  .button {
+    width: 30px;
+    height: 30px;
+    background-color: purple;
+  }
 }
 
 @keyframes open {

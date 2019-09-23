@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <DoorEffect/>
+    <Door/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import DoorEffect from '@/components/DoorEffect.vue'
+import Door from '@/components/Door.vue'
 
 export default {
   name: 'home',
   components: {
-    DoorEffect
+    Door
   }
 }
 </script>

@@ -84,6 +84,7 @@ export default {
   width: 100%;
   grid-area: col1;
   background-color: #e21708;
+  border-left: 1px solid;
 }
 
 .side1 {
@@ -91,8 +92,8 @@ export default {
   border-top: 58px solid transparent;
   position: relative;
   .screen {
-    height: 90px;
-    width: 90px;
+    height: 140px;
+    width: 140px;
     background-color: grey;
     position: absolute;
     top: 20px;
@@ -114,7 +115,7 @@ export default {
 
 .side2 {
   grid-area: p2;
-  border-right: 134px solid #e21708;
+  border-right: 133px solid #e21708;
   border-top: 57px solid transparent;
 }
 
@@ -124,6 +125,7 @@ export default {
   .inner {
     background-color: #e21708;
     height: 100%;
+    border-radius: 0 0 15px 0px;
   }
 }
 
@@ -144,9 +146,9 @@ export default {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  top: 40%;
+  top: 50%;
   background-color: yellow;
-  right: 0;
+  right: 10px;
 
   .button {
     height: 0;

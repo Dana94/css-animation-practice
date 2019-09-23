@@ -1,23 +1,17 @@
 <template>
-  <div class="hello">
-    <div class="square red">
-      <inner-panel />
-      <div class="door" :class="{open: isOpen}">
-        <div class="latch" @click="openDoor">
-          <div class="button"></div>
-        </div>
-        <div class="side1"></div>
-        <div class="side2"></div>
-        <div class="side3">
-          <div class="inner"></div>
-        </div>
-      </div>
+  <div class="door" :class="{open: isOpen}">
+    <div class="latch" @click="openDoor">
+      <div class="button"></div>
+    </div>
+    <div class="side1"></div>
+    <div class="side2"></div>
+    <div class="side3">
+      <div class="inner"></div>
     </div>
   </div>
 </template>
 
 <script>
-import InnerPanel from "./InnerPanel.vue";
 export default {
   name: "Door",
   props: {
@@ -32,24 +26,11 @@ export default {
     openDoor() {
       this.isOpen = true;
     }
-  },
-  components: {
-    InnerPanel
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.square {
-  height: 400px;
-  width: 400px;
-  border-radius: 15px;
-  &.red {
-    background-color: red;
-  }
-}
-
 .door {
   transform: rotateY(180deg);
   position: relative;

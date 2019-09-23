@@ -1,15 +1,15 @@
 <template>
   <div class="hello">
     <div class="square red">
-      <!-- <div class="panel">
+      <div class="panel">
         <div class="side1">
+          <div class="screen"></div>
           <div class="inner"></div>
         </div>
         <div class="side2"></div>
-        <div class="side3">
+        <div class="side3"></div>
+      </div>
 
-        </div>
-      </div>-->
       <div class="door">
         <div class="latch">
           <div class="button"></div>
@@ -74,6 +74,15 @@ export default {
 .side1 {
   grid-area: p1;
   border-top: 58px solid transparent;
+  position: relative;
+  .screen {
+    height: 90px;
+    width: 90px;
+    background-color: grey;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 
   .inner {
     background-color: #e21708;
@@ -121,11 +130,16 @@ export default {
   border-radius: 50%;
   top: 40%;
   background-color: yellow;
+  right: 0;
 
   .button {
-    width: 30px;
-    height: 30px;
-    background-color: purple;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 15px solid purple;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    right: 10px;
+    top: 5px;
   }
 }
 

@@ -10,8 +10,8 @@
         <div class="side3"></div>
       </div>
 
-      <div class="door">
-        <div class="latch">
+      <div class="door" :class="{open: isOpen}">
+        <div class="latch" @click="openDoor">
           <div class="button"></div>
         </div>
         <div class="blue1"></div>
@@ -29,6 +29,16 @@ export default {
   name: "DoorEffect",
   props: {
     msg: String
+  },
+  data() {
+    return {
+      isOpen: false
+    };
+  },
+  methods: {
+    openDoor() {
+      this.isOpen = true;
+    }
   }
 };
 </script>
@@ -38,10 +48,11 @@ export default {
 .square {
   height: 400px;
   width: 400px;
+  border-radius: 15px;
 }
 
 .door {
-  animation: open 2s linear forwards;
+  transform: rotateY(180deg);
   position: relative;
   display: grid;
   grid-template-rows: auto auto;
@@ -50,6 +61,10 @@ export default {
     ". . ."
     "col1 col2 col3";
   border-top: 32px solid transparent;
+
+  &.open {
+    animation: open 2s linear forwards;
+  }
 }
 
 .panel {
@@ -87,6 +102,7 @@ export default {
   .inner {
     background-color: #e21708;
     height: 100%;
+    border-radius: 0 0 0 15px;
   }
 }
 
